@@ -36,13 +36,8 @@ const PortfolioSection = () => {
             Explore All Projects
           </button>
         </div>
-        <div className=" absolute left-0 top-[90%] w-1/4 ">
-          <img src=".\src\assets\pc.png" alt="fiacre coding, someone coding, profesional coding, sitting on machine, spmeone coding"  className="absolute left-0 top-1/2 transform -translate-y-1/2 w-full"/>
-        </div>
-
         {/* Cards Section */}
-        <div className="absolute bottom-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 right-0 top-[90%] gap-3 w-3/4 transform -translate-y-1/2 ">
-          
+        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 transition duration-300 ease-in-out">
           {projects.map((project, index) => (
             <PortfolioCard
               key={index}

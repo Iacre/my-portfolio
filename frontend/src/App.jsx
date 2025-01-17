@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import PortfolioSection from "./components/PortfolioSection";
+import AboutSection from "./components/AboutSection";
 
 function App() {
   return (
@@ -41,6 +42,19 @@ Welcome to my world of innovation and creativity. As the CEO of EdgeReach Tech, 
  {/* Portfolio Section */}
  <PortfolioSection />
         </div>
+{/* Portfolio Section */}
+<div className="m-auto">
+  <AboutSection
+  title="FIacre: The Solution to Your Problems, Bridging Gaps, and Unveiling Mysteries"
+  description="Transforming Businesses and Enhancing Lives with Innovative Solutions
+In the ever-evolving world of technology and design, I am here to be the solution to your problems, filling the gaps and uncovering the secrets that will elevate your business and life. With expertise in software development, cybersecurity, AI, ML, and creative design, I am dedicated to making your vision a reality. Let’s explore how my innovative approach can make a lasting impact on your success."
+  image="./src/assets/a.png"
+  primaryButtonText="Learn More"
+  onPrimaryClick={() => alert("Contact Me clicked!")}
+  
+  />
+</div>
+
       </div>
     </div>
   );
