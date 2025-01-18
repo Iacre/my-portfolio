@@ -4,7 +4,7 @@ import PortfolioSection from "./components/PortfolioSection";
 import AboutSection from "./components/AboutSection";
 import SecHeading from "./components/SecHeading";
 import SkillCard from "./components/SkillCard";
-
+import Showcase from "./components/Showcase";
 function App() {
   return (
     <div className="App bg-mypri min-h-screen w-full relative">
@@ -63,7 +63,7 @@ heading="Skills And Experiences"
 />
 </div>
 {/* skills div */}
-<div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:ml-4 md:px-8 mx-2">
+<div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:ml-4 md:px-8 mx-2 py-8">
           <SkillCard
           image="./src/assets/sod.jpg" skill="Software Development"alt="AI, machine learning, neural networks, deep learning"/>
           <SkillCard skill="AI and Machine Learning" image="./src/assets/ai.jpg" />
@@ -76,6 +76,16 @@ heading="Skills And Experiences"
           <SkillCard skill="project Management" image="./src/assets/pr.jpg" />
 </div>
 
+{/* button div */}
+<div className=" py-8 text-center">
+<button  className="px-6 py-3 bg-transparent border border-blue-500 text-white rounded-full hover:bg-gra1 transition"
+>
+ explore More </button>
+</div>
+{/* showcase div */}
+<div className="p-4 w-full max-w-screen-xl mx-auto">
+  <Showcase/>
+</div>
       </div>
     </div>
   );

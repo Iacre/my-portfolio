@@ -20,6 +20,9 @@ export default {
       textDecorationColor: {
         'gra1': 'linear-gradient(to right, #BD6D29, #FAC17F)',  // Define the decoration color
       },
+      borderRadius: {
+        'mbr': '50px',
+      },
     },
   },
   plugins: [],

@@ -32,7 +32,7 @@ const PortfolioSection = () => {
           <h2 className="text-4xl font-bold mt-2">
             My <span className="text-gradient bg-gradient-to-r from-blue-500 via-purple-500 to-yellow-500">Recent Works</span>
           </h2>
-          <button className="mt-6 px-6 py-3 bg-transparent border border-gray-500 rounded-full text-white-500 hover:bg-gra2 hover:text-white transition">
+          <button className="mt-6 px-6 py-3 bg-transparent border border-blue-500 rounded-full text-white-500 hover:bg-gra2 hover:text-white transition">
             Explore All Projects
           </button>
         </div>

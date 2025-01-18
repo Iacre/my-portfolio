@@ -25,7 +25,7 @@ const AboutSection = ({ title, description, image, primaryButtonText, onPrimaryC
         </p>
         <div className="mt-6 flex justify-center md:justify-start space-x-4">
           <button 
-            className="px-6 py-3 bg-transparency text-white rounded-full hover:bg-gra2 transition"
+            className="px-6 py-3 bg-transparent border border-blue-500 text-white rounded-full hover:bg-gra2 transition"
             onClick={onPrimaryClick}
           >
             {primaryButtonText}
