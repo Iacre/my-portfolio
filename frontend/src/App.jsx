@@ -42,7 +42,7 @@ Welcome to my world of innovation and creativity. As the CEO of EdgeReach Tech, 
  {/* Portfolio Section */}
  <PortfolioSection />
         </div>
-{/* Portfolio Section */}
+{/* about Section */}
 <div className="m-auto">
   <AboutSection
   title="FIacre: The Solution to Your Problems, Bridging Gaps, and Unveiling Mysteries"
@@ -51,7 +51,6 @@ In the ever-evolving world of technology and design, I am here to be the solutio
   image="./src/assets/a.png"
   primaryButtonText="Learn More"
   onPrimaryClick={() => alert("Contact Me clicked!")}
-  
   />
 </div>
 

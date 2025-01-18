@@ -1,4 +1,6 @@
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
+
 
 const HeroSection = ({ title, description, image, primaryButtonText, secondaryButtonText, onPrimaryClick, onSecondaryClick }) => {
   // Split the title to underline only the first word
@@ -7,13 +9,16 @@ const HeroSection = ({ title, description, image, primaryButtonText, secondaryBu
   return (
     <section className="hero-section flex flex-col md:flex-row items-center justify-between px-2 md:px-8 py-8 space-y-8 md:space-y-0">
       {/* Left Image Section */}
-      <div className="hero-image w-full md:w-1/2 lg:mr-8">
+      <motion.div
+       className="hero-image w-full md:w-1/2 lg:mr-8"
+       whileHover={{ rotateY: 180, scale: 0.5 }}
+        transition={{ duration: 0.6 }}>
         <img 
           src={image} 
           alt="Hero" 
           className="w-full h-auto object-cover rounded-lg"
         />
-      </div>
+      </motion.div>
 
       {/* Right Text Section */}
       <div className="hero-text w-full md:w-1/2 md:pl-4 text-center md:text-left relative">

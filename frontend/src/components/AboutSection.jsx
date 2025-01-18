@@ -1,4 +1,7 @@
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
+import SocialMedia from "./SocialMedia";
+
 
 const AboutSection = ({ title, description, image, primaryButtonText, onPrimaryClick, }) => {
   // Split the title to underline only the first word
@@ -28,15 +31,22 @@ const AboutSection = ({ title, description, image, primaryButtonText, onPrimaryC
             {primaryButtonText}
           </button>
         </div>
+        <div className="mt-16 md:mr-4 ">
+        <SocialMedia />
+        </div>
       </div>
       {/* right Image Section */}
-      <div className="hero-image w-full md:w-1/2 lg:mr-8">
+      <motion.div
+        className="hero-image w-full md:w-1/2 lg:mr-8"
+        whileHover={{ rotateY: 180, scale: 0.5 }}
+        transition={{ duration: 0.6 }}
+      >
         <img 
           src={image} 
           alt="Hero" 
           className="w-full h-auto object-cover rounded-lg"
         />
-      </div>
+      </motion.div>
     </section>
   );
 };
