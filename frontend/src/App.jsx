@@ -2,6 +2,8 @@ import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import PortfolioSection from "./components/PortfolioSection";
 import AboutSection from "./components/AboutSection";
+import SecHeading from "./components/SecHeading";
+import SkillCard from "./components/SkillCard";
 
 function App() {
   return (
@@ -52,6 +54,26 @@ In the ever-evolving world of technology and design, I am here to be the solutio
   primaryButtonText="Learn More"
   onPrimaryClick={() => alert("Contact Me clicked!")}
   />
+</div>
+{/* title div */}
+<div className="px-2 md:px-8 py-8">
+<SecHeading
+title="Fiacre A Wide Variety Of Skills"
+heading="Skills And Experiences"
+/>
+</div>
+{/* skills div */}
+<div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:ml-4 md:px-8 mx-2">
+          <SkillCard
+          image="./src/assets/sod.jpg" skill="Software Development"alt="AI, machine learning, neural networks, deep learning"/>
+          <SkillCard skill="AI and Machine Learning" image="./src/assets/ai.jpg" />
+          <SkillCard skill="Cybersecurity" image="./src/assets/cyb.jpg" />
+          <SkillCard skill="UI/UX Design" image="./src/assets/ux.jpg" />
+          <SkillCard skill="Graphic Design " image="./src/assets/de.jpg" />
+          <SkillCard skill="Web Design" image="./src/assets/wb.jpg" />
+          <SkillCard skill="Leadership " image="./src/assets/led.jpg" />
+          <SkillCard skill="Inovation & problem solving" image="./src/assets/cre.jpg" />
+          <SkillCard skill="project Management" image="./src/assets/pr.jpg" />
 </div>
 
       </div>
