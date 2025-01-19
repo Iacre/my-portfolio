@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const Showcase = () => {
   return (
     <motion.div 
-    className="showcase bg-gra2 rounded-mbr p-6 h-40 flex flex-col md:flex-row justify-around items-center text-white shadow-lg"
+    className="showcase bg-gra2 rounded-mbr p-6 md:h-40 flex flex-col md:flex-row justify-around items-center text-white shadow-lg"
     whileHover={{ scale: 1.2, background: "linear-gradient(135deg, #05788D, #012127)" }}
     transition={{ duration: 0.6 }}>
       <div className="text-center md:text-left mb-4 md:mb-0">

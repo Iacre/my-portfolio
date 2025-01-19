@@ -5,6 +5,7 @@ import AboutSection from "./components/AboutSection";
 import SecHeading from "./components/SecHeading";
 import SkillCard from "./components/SkillCard";
 import Showcase from "./components/Showcase";
+import Blog from "./components/Blog";
 function App() {
   return (
     <div className="App bg-mypri min-h-screen w-full relative">
@@ -63,17 +64,31 @@ heading="Skills And Experiences"
 />
 </div>
 {/* skills div */}
-<div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:ml-4 md:px-8 mx-2 py-8">
-          <SkillCard
-          image="./src/assets/sod.jpg" skill="Software Development"alt="AI, machine learning, neural networks, deep learning"/>
-          <SkillCard skill="AI and Machine Learning" image="./src/assets/ai.jpg" />
-          <SkillCard skill="Cybersecurity" image="./src/assets/cyb.jpg" />
-          <SkillCard skill="UI/UX Design" image="./src/assets/ux.jpg" />
-          <SkillCard skill="Graphic Design " image="./src/assets/de.jpg" />
-          <SkillCard skill="Web Design" image="./src/assets/wb.jpg" />
+<div className="px-2 md:px-8 py-8">
+          <div className="mb-8">
+            <h3 className="text-myhigh mb-4">Technical Development Skills</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <SkillCard skill="Software Development" image="./src/assets/sod.jpg" />
+              <SkillCard skill="AI and Machine Learning" image="./src/assets/ai.jpg" />
+              <SkillCard skill="Cybersecurity" image="./src/assets/cyb.jpg" />
+            </div>
+          </div>
+          <div className="mb-8">
+            <h3 className="text-myhigh mb-4">Creative Design Skills</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <SkillCard skill="UI/UX Design" image="./src/assets/ux.jpg" />
+              <SkillCard skill="Graphic Design" image="./src/assets/de.jpg" />
+              <SkillCard skill="Web Design" image="./src/assets/wb.jpg" />
+            </div>
+          </div>
+          <div className="mb-8">
+          <h3 className="text-myhigh mb-4">Business and Management skills</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <SkillCard skill="Leadership " image="./src/assets/led.jpg" />
           <SkillCard skill="Inovation & problem solving" image="./src/assets/cre.jpg" />
           <SkillCard skill="project Management" image="./src/assets/pr.jpg" />
+          </div>
+        </div>
 </div>
 
 {/* button div */}
@@ -83,9 +98,43 @@ heading="Skills And Experiences"
  explore More </button>
 </div>
 {/* showcase div */}
-<div className="p-4 w-full max-w-screen-xl mx-auto">
+<div className="p-4 w-full max-w-screen-xl mx-auto mb-8">
   <Showcase/>
 </div>
+
+{/* title div */}
+<div className="px-2 md:px-8 py-8">
+<SecHeading
+title="Fiacre: Latest from Blog"
+heading="Blogs"
+/>
+</div>
+{/* blog div */}
+<div className="px-2 md:px-8 py-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <Blog
+              image="./src/assets/b3.png"
+              date="May 25, 2021"
+              heading="The Future of AI and Machine Learning"
+              paragraph="Discover the latest trends in AI and machine learning and how they are shaping the future."
+              link="https://google.com"
+            />
+            <Blog
+              image="./src/assets/b1.png"
+              date="June 15, 2021"
+              heading="The Impact of Cybersecurity"
+              paragraph="Learn how cybersecurity is essential for businesses and how it can protect your data and assets."
+              link="https://google.com"
+            />
+            <Blog
+              image="./src/assets/b2.png"
+              date="July 5, 2021"
+              heading="The Art of Creative Design"
+              paragraph="Explore the world of creative design and how it can transform your business and brand."
+              link="https://google.com"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
