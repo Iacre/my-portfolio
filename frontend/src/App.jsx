@@ -6,6 +6,32 @@ import SecHeading from "./components/SecHeading";
 import SkillCard from "./components/SkillCard";
 import Showcase from "./components/Showcase";
 import Blog from "./components/Blog";
+import MusicPlayer from "./components/MusicPlayer";
+import AnimatedButton from "./components/AnimatedButton";
+
+const tracks = [
+  { title: "Track 1", url: "./src/assets/musics/akon_smack_that_.mp3" },
+  { title: "Track 2", url: "./src/assets/musics/ariel_wayz_juno_kizigenza_away.mp3" },
+  { title: "Track 3", url: "./src/assets/musics/beyonce_halo_.mp3" },
+  { title: "Track 4", url: "./src/assets/musics/coldplay_fix_you.mp3" },
+  { title: "Track 5", url: "./src/assets/musics/ed_sheeran_perfect.mp3" },
+  { title: "Track 6", url: "./src/assets/musics/eminem_love_the_way_you_lie.mp3" },
+  { title: "Track 7", url: "./src/assets/musics/hello.mp3" },
+  { title: "Track 8", url: "./src/assets/musics/khalid_young_dumb.mp3" },
+  { title: "Track 9", url: "./src/assets/musics/lady_gaga_bad_romance.mp3" },
+  { title: "Track 10", url: "./src/assets/musics/lauren_daigle_you_say.mp3" },
+  { title: "Track 11", url: "./src/assets/musics/lil_nas_x_old_town_road.mp3" },
+  { title: "Track 12", url: "./src/assets/musics/oceans_where_feet_may_fail.mp3" },
+  { title: "Track 13", url: "./src/assets/musics/post_malone_swae_lee_sunflower.mp3" },
+  { title: "Track 14", url: "./src/assets/musics/praise_feat._brandon_lake_chris_brown_chandler.mp3" },
+  { title: "Track 15", url: "./src/assets/musics/rema_calm_down.mp3" },
+  { title: "Track 16", url: "./src/assets/musics/rihanna_man_down.mp3" },
+  { title: "Track 17", url: "./src/assets/musics/sia_snowman.mp3" },
+  { title: "Track 18", url: "./src/assets/musics/sia_unstoppable.mp3" },
+  { title: "Track 19", url: "./src/assets/musics/wiz_khalifa_see_you_again.mp3"}
+  
+];
+
 function App() {
   return (
     <div className="App bg-mypri min-h-screen w-full relative">
@@ -135,6 +161,19 @@ heading="Blogs"
             />
           </div>
         </div>
+         {/* Music Player Section */}
+         <div className="px-2 md:px-8 py-8">
+          <MusicPlayer tracks={tracks} />
+        </div>
+        {/* title div */}
+<div className="px-2 md:px-8 py-8">
+<SecHeading
+title="Fiacre: My Resume"
+heading="CV"
+/>
+</div>
+ {/* resume button */}
+ <AnimatedButton text="Download My Resume" onClick={() => alert("Download My Resume clicked!")} />
       </div>
     </div>
   );
