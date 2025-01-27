@@ -8,6 +8,8 @@ import Showcase from "./components/Showcase";
 import Blog from "./components/Blog";
 import MusicPlayer from "./components/MusicPlayer";
 import AnimatedButton from "./components/AnimatedButton";
+import Testimonial from "./components/Testimonial";
+import Subscription from "./components/Subscription";
 
 const tracks = [
   { title: "Track 1", url: "./src/assets/musics/akon_smack_that_.mp3" },
@@ -90,7 +92,7 @@ heading="Skills And Experiences"
 />
 </div>
 {/* skills div */}
-<div className="px-2 md:px-8 py-8">
+<div className=" m-8 md:px-8">
           <div className="mb-8">
             <h3 className="text-myhigh mb-4">Technical Development Skills</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -174,9 +176,49 @@ heading="CV"
 </div>
  {/* resume button */}
  <AnimatedButton text="Download My Resume" onClick={() => alert("Download My Resume clicked!")} />
+
+ <div className="flex justify-center ">
+  <div className="text-center py-8">
+    <SecHeading
+      title="Loved by industry leaders"
+      heading="Testimonial"
+    />
+  </div>
+</div>
+
+         {/* Testimonial Section */}
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 pb-8 md:px-8">
+          <Testimonial
+            image="./src/assets/tes.png"
+            name="John Doe"
+            position="CEO, Example Corp"
+            testimonial="FIacre's work has been transformative for our business. His innovative solutions and creative designs have significantly improved our operations and brand presence."
+            className="transform rotate-3"
+          />
+          <Testimonial
+            image="./src/assets/tes.png"
+            name="Jane Smith"
+            position="CTO, Tech Innovators"
+            testimonial="Working with FIacre has been a game-changer. His expertise in AI and machine learning has propelled our projects to new heights."
+            className="transform -rotate-3"
+          />
+          <Testimonial
+            image="./src/assets/tes.png"
+            name="Michael Johnson"
+            position="Creative Director, Design Studio"
+            testimonial="FIacre's creative vision and attention to detail are unparalleled. His designs have brought our brand to life in ways we never imagined."
+            className="transform rotate-3"
+          />
+        </div>
+
+        
+        {/* Subscription Section */}
+        <div className="px-2 md:px-8 py-8">
+          <Subscription heading="Subscribe for updates and trends" />
+        </div>
       </div>
     </div>
   );
 }
 
-export default App;
+export default App; 

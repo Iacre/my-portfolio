@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const AnimatedButton = ({ text, onClick }) => {
   return (
-    <div className="relative flex justify-center items-center min-h-screen ">
+    <div className="relative flex justify-center items-center min-h-screen">
       {/* Background Animation */}
       <motion.div
         className="absolute inset-0 flex justify-center items-center"

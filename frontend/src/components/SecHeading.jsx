@@ -9,8 +9,8 @@ const SecHeading = ({ title,heading }) => {
   return (
     <>
       {/* my title sec */}
-      <div className="hero-text w-full md:w-1/2 md:pl-4 text-center md:text-left relative">
-      <h3 className="text-yellow-500 uppercase text-sm pb-4 ml-6">{heading}</h3>
+      <div className="hero-text w-full  md:pl-4 text-center md:text-left relative">
+      <h3 className="text-yellow-500 uppercase text-center text-sm pb-4 ml-6">{heading}</h3>
         <div className="absolute -left-4 -top-4 w-10 h-10 rounded-full bg-gra3"></div>
         <h1 className="text-4xl font-bold flex items-center leading-normal">
           <span className="ml-4">
