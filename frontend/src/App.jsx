@@ -8,8 +8,15 @@ import Showcase from "./components/Showcase";
 import Blog from "./components/Blog";
 import MusicPlayer from "./components/MusicPlayer";
 import AnimatedButton from "./components/AnimatedButton";
-import Testimonial from "./components/Testimonial";
 import Subscription from "./components/Subscription";
+import Contact from "./components/Contact";
+import Footer from "./components/footer";
+import TestimonialCarousel from "./components/TestimonialCarousel";
+import CV from "./components/cv";
+
+
+
+
 
 const tracks = [
   { title: "Track 1", url: "./src/assets/musics/akon_smack_that_.mp3" },
@@ -33,6 +40,26 @@ const tracks = [
   { title: "Track 19", url: "./src/assets/musics/wiz_khalifa_see_you_again.mp3"}
   
 ];
+const testimonials = [
+  {
+     image: "./src/assets/tes.png",
+     name: "John Doe",
+     position: "CEO, Example Corp",
+     testimonial:"FIacre's work has been transformative for our business. His innovative solutions and creative designs have significantly improved our operations and brand presence.",
+  },
+  {
+     image: "./src/assets/tes.png",
+     name: "Jane Smith",
+     position: "CTO, Tech Innovators",
+     testimonial:"Working with FIacre has been a game-changer. His expertise in AI and machine learning has propelled our projects to new heights.",
+  },
+  {
+     image: "./src/assets/tes.png",
+     name: "Michael Johnson",
+     position: "Creative Director, Design Studio",
+     testimonial:"FIacre's creative vision and attention to detail are unparalleled. His designs have brought our brand to life in ways we never imagined.",
+  }
+]
 
 function App() {
   return (
@@ -51,7 +78,7 @@ function App() {
         </header>
 
         {/* Main Sections */}
-        <main className="p-6 w-full max-w-screen-xl mx-auto">
+        <main id="home" className="p-6 w-full max-w-screen-xl mx-auto">
           <h1 className="text-3xl font-bold text-center">
             Welcome to Fiacre&apos;s Portfolio
           </h1>
@@ -64,17 +91,16 @@ Welcome to my world of innovation and creativity. As the CEO of EdgeReach Tech, 
             image="./src/assets/herofia1.png"
             primaryButtonText="Contact Me"
             secondaryButtonText="My Resume"
-            onPrimaryClick={() => alert("Contact Me clicked!")}
-            onSecondaryClick={() => alert("Learn More clicked!")}
+           
           />
         </main>
 {/* Portfolio div */}
-        <div className="mr-auto ml-10">
+        <div id="portfolio" className="mr-auto ml-10">
  {/* Portfolio Section */}
  <PortfolioSection />
         </div>
 {/* about Section */}
-<div className="m-auto">
+<div id="about" className="m-auto">
   <AboutSection
   title="FIacre: The Solution to Your Problems, Bridging Gaps, and Unveiling Mysteries"
   description="Transforming Businesses and Enhancing Lives with Innovative Solutions
@@ -91,11 +117,11 @@ title="Fiacre A Wide Variety Of Skills"
 heading="Skills And Experiences"
 />
 </div>
-{/* skills div */}
-<div className=" m-8 md:px-8">
+{/* skills div */}  
+<div id="skills" className=" px-2 md:px-8 py-4 w-full m-auto">
           <div className="mb-8">
             <h3 className="text-myhigh mb-4">Technical Development Skills</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
               <SkillCard skill="Software Development" image="./src/assets/sod.jpg" />
               <SkillCard skill="AI and Machine Learning" image="./src/assets/ai.jpg" />
               <SkillCard skill="Cybersecurity" image="./src/assets/cyb.jpg" />
@@ -103,15 +129,15 @@ heading="Skills And Experiences"
           </div>
           <div className="mb-8">
             <h3 className="text-myhigh mb-4">Creative Design Skills</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
               <SkillCard skill="UI/UX Design" image="./src/assets/ux.jpg" />
               <SkillCard skill="Graphic Design" image="./src/assets/de.jpg" />
               <SkillCard skill="Web Design" image="./src/assets/wb.jpg" />
             </div>
           </div>
-          <div className="mb-8">
+          <div className="mb-4">
           <h3 className="text-myhigh mb-4">Business and Management skills</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
           <SkillCard skill="Leadership " image="./src/assets/led.jpg" />
           <SkillCard skill="Inovation & problem solving" image="./src/assets/cre.jpg" />
           <SkillCard skill="project Management" image="./src/assets/pr.jpg" />
@@ -138,7 +164,7 @@ heading="Blogs"
 />
 </div>
 {/* blog div */}
-<div className="px-2 md:px-8 py-8">
+<div id="blog" className="px-2 md:px-8 py-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <Blog
               image="./src/assets/b3.png"
@@ -162,12 +188,14 @@ heading="Blogs"
               link="https://google.com"
             />
           </div>
+          {/* button div */}
+<div className=" py-8 text-center">
+<button  className="px-6 py-3 bg-transparent border border-blue-500 text-white rounded-full hover:bg-gra1 transition"
+>
+ explore More </button>
+</div>
         </div>
-         {/* Music Player Section */}
-         <div className="px-2 md:px-8 py-8">
-          <MusicPlayer tracks={tracks} />
-        </div>
-        {/* title div */}
+        
 <div className="px-2 md:px-8 py-8">
 <SecHeading
 title="Fiacre: My Resume"
@@ -175,8 +203,22 @@ heading="CV"
 />
 </div>
  {/* resume button */}
- <AnimatedButton text="Download My Resume" onClick={() => alert("Download My Resume clicked!")} />
+ <div id="resume"><AnimatedButton text="Download My Resume" onClick={() => {}}  cvUrl="./src/assets/Fiacre ISHUKWE CV.pdf"/></div>
 
+  {/* resume SECTION */}
+  {/* title div */}
+<div className="flex justify-center ">
+  <div className="text-center py-8">
+    <SecHeading
+      title="Create And Download Your CV/ Resume For Free"
+      heading="Resume Template"
+    />
+  </div>
+</div>
+  
+  <div id="cv"><CV/></div>
+
+ {/* title div */}
  <div className="flex justify-center ">
   <div className="text-center py-8">
     <SecHeading
@@ -187,34 +229,34 @@ heading="CV"
 </div>
 
          {/* Testimonial Section */}
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 pb-8 md:px-8">
-          <Testimonial
-            image="./src/assets/tes.png"
-            name="John Doe"
-            position="CEO, Example Corp"
-            testimonial="FIacre's work has been transformative for our business. His innovative solutions and creative designs have significantly improved our operations and brand presence."
-            className="transform rotate-3"
-          />
-          <Testimonial
-            image="./src/assets/tes.png"
-            name="Jane Smith"
-            position="CTO, Tech Innovators"
-            testimonial="Working with FIacre has been a game-changer. His expertise in AI and machine learning has propelled our projects to new heights."
-            className="transform -rotate-3"
-          />
-          <Testimonial
-            image="./src/assets/tes.png"
-            name="Michael Johnson"
-            position="Creative Director, Design Studio"
-            testimonial="FIacre's creative vision and attention to detail are unparalleled. His designs have brought our brand to life in ways we never imagined."
-            className="transform rotate-3"
-          />
+         <div id="testimonials" >
+         <TestimonialCarousel testimonials={testimonials} />
+         
+
         </div>
 
         
         {/* Subscription Section */}
-        <div className="px-2 md:px-8 py-8">
-          <Subscription heading="Subscribe for updates and trends" />
+        <div className="px-2 md:px-8 py-8 p-4 w-full max-w-screen-xl mx-auto mb-8">
+          <Subscription heading="Subscribe to MY newsletter for updates and insights." />
+        </div>
+
+{/* title div */}
+<div className="flex justify-center ">
+  <div className="text-center py-8">
+    <SecHeading
+      title="Reach Out To Me Now"
+      heading="CONTACT ME"
+    />
+  </div>
+</div>
+{/* contact div */}
+ <div id="contact"><Contact /></div>
+ {/* Footer Section */}
+ <Footer />
+  {/* Music Player Section */}
+  <div className="px-2 md:px-8 py-8 ">
+          <MusicPlayer tracks={tracks} />
         </div>
       </div>
     </div>

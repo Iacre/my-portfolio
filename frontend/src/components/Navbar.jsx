@@ -13,7 +13,7 @@ const Navbar = () => {
     "Home",
     "Portfolio",
     "Resume",
-    "Awards",
+    "Testimonials",
     "Skills",
     "Blog",
     "About",
@@ -42,16 +42,16 @@ const Navbar = () => {
           <li
             key={index}
             className="group relative cursor-pointer text-base hover:text-yellow-400"
-          >
-            {item}
+          > <a className="text-inherit" href={`#${item.toLowerCase()}`}>
+            {item}</a>
             {/* Hover underline */}
             <span className="absolute left-0 bottom-0 w-0 h-1 bg-yellow-400 group-hover:w-full transition-all duration-300"></span>
           </li>
         ))}
         <li className="group relative cursor-pointer text-base hover:text-mysec mb-2">
-          <button className="px-4 py-2 bg-gra1 text-black rounded-full hover:bg-gra2 transition">
-            Learn Coding
-          </button>
+        <a href="#cv"><button className="px-4 py-2 bg-gra1 text-black rounded-full hover:bg-gra2 transition">
+            Create CV
+          </button> </a>
         </li>
       </ul>
 
@@ -74,9 +74,9 @@ const Navbar = () => {
               </li>
             ))}
             <li onClick={toggleMenu}>
-              <button className="px-4 py-0 bg-gra2 text-white rounded-full hover:bg-mysec transition">
+            <a href="#contact"> <button className="px-4 py-0 bg-gra2 text-white rounded-full hover:bg-mysec transition">
                 Contact
-              </button>
+              </button> </a>
             </li>
           </ul>
         </motion.div>

@@ -14,7 +14,7 @@ const MusicPlayer = ({ tracks }) => {
 
   return (
     <motion.div
-      className="music-player bg-mysec p-4 rounded-full shadow-lg fixed bottom-4 right-4 group"
+      className="music-player bg-mysec p-4 rounded-full shadow-lg fixed bottom-4 right-4 group "
       whileHover={{ scale: 1.2 }}
       transition={{ duration: 0.3 }}
     >

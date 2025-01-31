@@ -33,18 +33,19 @@ const HeroSection = ({ title, description, image, primaryButtonText, secondaryBu
           {description}
         </p>
         <div className="mt-6 flex justify-center md:justify-start space-x-4">
-          <button 
+        <a href="#contact">  <button 
             className="px-6 py-3 bg-gra1 text-white rounded-full hover:bg-gra2 transition"
             onClick={onPrimaryClick}
           >
             {primaryButtonText}
-          </button>
-          <button 
+          </button></a>
+         
+          <a href="#resume"> <button 
             className="px-6 py-3 bg-gra2 text-white rounded-full hover:bg-gra1 transition"
             onClick={onSecondaryClick}
           >
             {secondaryButtonText}
-          </button>
+          </button> </a>
         </div>
       </div>
     </section>

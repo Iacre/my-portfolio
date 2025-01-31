@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const SkillCard = ({ skill, image }) => {
   return (
     <motion.div
-      className="relative max-w-md h-48 bg-mysec rounded-lg p-6 flex items-center justify-center"
+      className="relative w-full h-48 bg-mysec rounded-lg p-6 flex items-center justify-center"
       whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.3 }}
     >
