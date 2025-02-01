@@ -12,7 +12,7 @@ import Subscription from "./components/Subscription";
 import Contact from "./components/Contact";
 import Footer from "./components/footer";
 import TestimonialCarousel from "./components/TestimonialCarousel";
-import CV from "./components/CV";
+import Cv from "./components/Cv";
 
 
 
@@ -66,7 +66,7 @@ function App() {
     <div className="App bg-mypri min-h-screen w-full relative">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-[url('./assets/tx.png')] bg-repeat bg-cover bg-center opacity-5"
+        className="absolute inset-0 bg-[url('./assets/tx.jpg')] bg-repeat bg-cover bg-center opacity-5"
         aria-hidden="true"
       ></div>
 
