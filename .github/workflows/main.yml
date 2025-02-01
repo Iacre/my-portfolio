@@ -18,13 +18,7 @@ jobs:
         if: ${{ github.actor == 'Iacre' || github.actor == 'EdgeReachTech' }}
         uses: actions/checkout@v3
 
-      # Build  code in the CI environment (outside the server)
-      - name: Install dependencies and build
-        run: |
-          cd frontend  
-          npm install
-          npm run build
-
+      
       # Copy the built files to the VPS (you only need to copy the build files)
       - name: Copy build files to VPS
         if: ${{ github.actor == 'Iacre' || github.actor == 'EdgeReachTech' }}
