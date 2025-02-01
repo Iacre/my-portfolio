@@ -216,7 +216,7 @@ heading="CV"
   </div>
 </div>
   
-  <div id="cv"><CV/></div>
+  <div id="cv"><Cv/></div>
 
  {/* title div */}
  <div className="flex justify-center ">
