@@ -4,13 +4,13 @@ import { motion } from "framer-motion";
 const PortfolioCard = ({ title, description, image }) => {
   return (
     <motion.div
-      className="relative max-w-sm shadow-lg overflow-visible bg-mysec rounded-lg"
+      className="relative max-w-sm shadow-lg overflow-visible bg-mysec rounded-lg mb-16 sm:mb-12" // Added bottom padding
       whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.3 }}
     >
       {/* Image Section */}
       <motion.div
-        className="relative"
+        className="relative overflow-hidden" // Added overflow-hidden
         whileHover={{ scale: 1.1 }}
         transition={{ duration: 0.3 }}
       >
@@ -21,9 +21,9 @@ const PortfolioCard = ({ title, description, image }) => {
         />
       </motion.div>
 
-      {/* Text Section (Overlapping) */}
+      {/* Text Section - Changed positioning */}
       <motion.div
-        className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2  p-4 w-11/12 rounded-lg shadow-lg"
+        className="relative mx-4 -mt-8 p-4 rounded-lg shadow-lg" // Changed to relative positioning
         animate={{ background: "linear-gradient(135deg, #05788D, #012127)" }}
         whileHover={{ background: "linear-gradient(135deg, #FAC17F, #BD6D29)" }}
         transition={{ duration: 0.3 }}
@@ -35,7 +35,6 @@ const PortfolioCard = ({ title, description, image }) => {
   );
 };
 
-// Define PropTypes
 PortfolioCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,

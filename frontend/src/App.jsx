@@ -42,21 +42,21 @@ const tracks = [
 ];
 const testimonials = [
   {
-     image: "./assets/tes.png",
-     name: "John Doe",
-     position: "CEO, Example Corp",
+     image: "./assets/navg.jpg",
+     name: "Felix Navaga",
+     position: "CEO, CyberPro Group",
      testimonial:"FIacre's work has been transformative for our business. His innovative solutions and creative designs have significantly improved our operations and brand presence.",
   },
   {
-     image: "./assets/tes.png",
-     name: "Jane Smith",
-     position: "CTO, Tech Innovators",
+     image: "./assets/luk.png",
+     name: "Lukundo John",
+     position: "HRM, Job Sharpens",
      testimonial:"Working with FIacre has been a game-changer. His expertise in AI and machine learning has propelled our projects to new heights.",
   },
   {
-     image: "./assets/tes.png",
-     name: "Michael Johnson",
-     position: "Creative Director, Design Studio",
+     image: "./assets/lisa.jpg",
+     name: "Elisabeth Abegg",
+     position: "Creative Director, Schnel Media",
      testimonial:"FIacre's creative vision and attention to detail are unparalleled. His designs have brought our brand to life in ways we never imagined.",
   }
 ]
@@ -66,9 +66,10 @@ function App() {
     <div className="App bg-mypri min-h-screen w-full relative">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-[url('./assets/tx.png')] bg-repeat bg-cover bg-center opacity-5"
-        aria-hidden="true"
-      ></div>
+  className="absolute inset-0 bg-[url('./assets/bgt.jpg')] bg-repeat bg-auto bg-center opacity-[0.8%]"
+  aria-hidden="true"
+></div>
+
 
       {/* Main Content */}
       <div className="relative z-10">

@@ -47,7 +47,7 @@ const TestimonialCarousel = ({ testimonials }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-    }, 5000); // Change testimonial every 5 seconds
+    }, 10000); // Change testimonial every 5 seconds
 
     return () => clearInterval(interval);
   }, [testimonials.length]);

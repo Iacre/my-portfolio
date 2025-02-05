@@ -7,8 +7,9 @@ import ScrollButton from "./ScrollButton";
 
 const Footer = () => {
   return (
+    
     <footer className="relative text-white p-8">
-      <div className="absolute inset-0 bg-cover bg-center opacity-25" style={{ backgroundImage: "url('./src/assets/fb.jpg')" }}></div>
+      <div className="absolute inset-0 bg-cover bg-center opacity-20 " style={{ backgroundImage: "url('./assets/fb.jpg')" }}></div>
       <div className="relative container mx-auto flex flex-col md:flex-row justify-between items-start mb-8 pb-8">
         {/* Left Section - Name/Logo and Buttons */}
         <div className="mb-8 md:mb-0 ">

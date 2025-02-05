@@ -7,19 +7,19 @@ const PortfolioSection = () => {
       id: 1,
       title: "Professional Website",
       description: "Add style and page routes for professional spaces.",
-      image: "./src/assets/p3.png", // Update the image path
+      image: "./assets/p3.png", // Update the image path
     },
     {
       id: 2,
       title: "Mobile App/Web App",
       description: "Use cutting-edge frameworks to build responsive and feature-rich apps.",
-      image: "./src/assets/p2.png",
+      image: "./assets/p2.png",
     },
     {
       id: 3,
       title: "AI Bot",
       description: "Let bots solve real-time problems by automating repetitive tasks.",
-      image: "./src/assets/p1.png",
+      image: "./assets/p1.png",
     },
   ];
 
@@ -37,8 +37,8 @@ const PortfolioSection = () => {
           </button>
         </div>
         {/* Cards Section */}
-        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
-          {projects.map((project, index) => (
+        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+          {projects.map((project, index) => ( 
             <PortfolioCard
               key={index}
               title={project.title}

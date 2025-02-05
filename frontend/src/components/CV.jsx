@@ -122,7 +122,8 @@ const CV = () => {
 
   return (
     <div className={styles.cvContainer}>
-      <div className="min-h-screen bg-mypri p-8">
+      <div className="min-h-screen bg-mypri p-8 bg-[url('./assets/cvb.jpg')] bg-repeat bg-auto bg-center bg-opacity-10">
+        
         {/* Form Section */}
         <div className="mb-8 max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
           <h2 className={styles.h2} >Personalize Your CV </h2>
@@ -157,21 +158,21 @@ const CV = () => {
                 value={contact.phone1}
                 onChange={(e) => setContact({ ...contact, phone1: e.target.value })}
                 className="w-full p-2 border rounded-lg"
-                placeholder="Phone 1"
+                placeholder="Your Phone Number 1"
               />
               <input
                 type="text"
                 value={contact.phone2}
                 onChange={(e) => setContact({ ...contact, phone2: e.target.value })}
                 className="w-full p-2 border rounded-lg"
-                placeholder="Phone 2"
+                placeholder="Your Phone Number 2"
               />
               <input
                 type="email"
                 value={contact.email}
                 onChange={(e) => setContact({ ...contact, email: e.target.value })}
                 className="w-full p-2 border rounded-lg"
-                placeholder="Email"
+                placeholder="Email Address"
               />
               <input
                 type="text"
@@ -191,7 +192,7 @@ const CV = () => {
               onChange={(e) => setObjective(e.target.value)}
               className="w-full p-2 border rounded-lg"
               rows="4"
-              placeholder="Objective"
+              placeholder="please write your objective here"
             />
           </div>
 
@@ -209,7 +210,7 @@ const CV = () => {
                     setEducation(updatedEducation);
                   }}
                   className="w-full p-2 border rounded-lg mb-2"
-                  placeholder="Institution"
+                  placeholder="Institution/school"
                 />
                 <input
                   type="text"
@@ -220,7 +221,7 @@ const CV = () => {
                     setEducation(updatedEducation);
                   }}
                   className="w-full p-2 border rounded-lg mb-2"
-                  placeholder="Degree"
+                  placeholder="Degree/Certificate"
                 />
                 <input
                   type="text"
@@ -231,7 +232,7 @@ const CV = () => {
                     setEducation(updatedEducation);
                   }}
                   className="w-full p-2 border rounded-lg"
-                  placeholder="Duration"
+                  placeholder="Duration/Year use this format (2021 - 2024)"
                 />
               </div>
             ))}
@@ -251,7 +252,7 @@ const CV = () => {
                     setWorkExperience(updatedExperience);
                   }}
                   className="w-full p-2 border rounded-lg mb-2"
-                  placeholder="Company"
+                  placeholder="Company/Organization use this format (Company Name, Country) "
                 />
                 <input
                   type="text"
@@ -262,7 +263,7 @@ const CV = () => {
                     setWorkExperience(updatedExperience);
                   }}
                   className="w-full p-2 border rounded-lg mb-2"
-                  placeholder="Role"
+                  placeholder="Role/Position "
                 />
                 <input
                   type="text"
@@ -273,7 +274,7 @@ const CV = () => {
                     setWorkExperience(updatedExperience);
                   }}
                   className="w-full p-2 border rounded-lg mb-2"
-                  placeholder="Duration"
+                  placeholder="Duration/Year use this format (2021 - 2024)"
                 />
                 <textarea
                   value={exp.responsibilities.join("\n")}
@@ -304,7 +305,7 @@ const CV = () => {
                   setSkills(updatedSkills);
                 }}
                 className="w-full p-2 border rounded-lg mb-2"
-                placeholder="Skill"
+                placeholder="write your skills here"
               />
             ))}
           </div>
@@ -342,7 +343,7 @@ const CV = () => {
                     setReferences(updatedReferences);
                   }}
                   className="w-full p-2 border rounded-lg mb-2"
-                  placeholder="Name"
+                  placeholder="full name"
                 />
                 <input
                   type="text"
@@ -353,7 +354,7 @@ const CV = () => {
                     setReferences(updatedReferences);
                   }}
                   className="w-full p-2 border rounded-lg mb-2"
-                  placeholder="Role"
+                  placeholder="Role/Position"
                 />
                 <input
                   type="text"
