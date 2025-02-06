@@ -18,13 +18,16 @@ jobs:
         if: ${{ github.actor == 'Iacre' || github.actor == 'EdgeReachTech' }}
         uses: actions/checkout@v3
 
-      - name: Build frontend
+      - name: Install dependencies and build frontend
         run: |
           cd frontend
-          npm install
-          npm run build  # Generates build/ folder inside frontend
+          npm install  # Install dependencies
+          npm run build  # Create the build folder
 
-      # Copy only the build files to the VPS (ensure it's only the contents of the build folder)
+      - name: List build directory contents (check for files)
+        run: |
+          ls -l frontend/build  # Verify the build directory exists and contains files
+
       - name: Copy build files to VPS
         if: ${{ github.actor == 'Iacre' || github.actor == 'EdgeReachTech' }}
         uses: appleboy/scp-action@v0.1.5
@@ -48,5 +51,5 @@ jobs:
             cd /var/www/my-portfolio/frontend
             git pull origin main  # Pull the latest code (optional, depending on your needs)
             npm install  # Install dependencies
-            npm run build
+            npm run build  # Rebuild (if necessary)
           port: 2200
