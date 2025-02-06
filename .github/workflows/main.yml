@@ -3,7 +3,7 @@ name: Deploy to VPS (my-portfolio-frontend)
 on:
   push:
     branches:
-      - main  # prod repo
+      - main
 
 jobs:
   deploy:
@@ -18,15 +18,16 @@ jobs:
         if: ${{ github.actor == 'Iacre' || github.actor == 'EdgeReachTech' }}
         uses: actions/checkout@v3
 
-      - name: Install dependencies and build frontend
+      - name: Build frontend
+        if: ${{ github.actor == 'Iacre' || github.actor == 'EdgeReachTech' }}
         run: |
           cd frontend
-          npm install  # Install dependencies
-          npm run build  # Create the build folder
+          npm install
+          npm run build  # This creates 'dist' directory instead of 'build'
 
-      - name: List build directory contents (check for files)
+      - name: Verify build output
         run: |
-          ls -l frontend/build  # Verify the build directory exists and contains files
+          ls -l frontend/dist
 
       - name: Copy build files to VPS
         if: ${{ github.actor == 'Iacre' || github.actor == 'EdgeReachTech' }}
@@ -35,8 +36,18 @@ jobs:
           host: 77.37.124.116
           username: fiacre
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "./frontend/build/*"  # Only copy the contents of the build folder
-          target: "/var/www/my-portfolio/frontend"  # Target folder on the server
+          source: "frontend/dist/*"
+          target: "/var/www/my-portfolio/frontend"
+          port: 2200
+
+      - name: Ensure directory exists on server
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: 77.37.124.116
+          username: fiacre
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            mkdir -p /var/www/my-portfolio/frontend
           port: 2200
 
       - name: Restart Application
@@ -47,9 +58,9 @@ jobs:
           username: fiacre
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            # Navigate to the project directory on the server
-            cd /var/www/my-portfolio/frontend
-            git pull origin main  # Pull the latest code (optional, depending on your needs)
-            npm install  # Install dependencies
-            npm run build  # Rebuild (if necessary)
+            # If using Nginx
+            sudo systemctl restart nginx
+            
+            # Or if using PM2
+            # pm2 restart your-app-name
           port: 2200
