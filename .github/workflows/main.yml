@@ -18,8 +18,13 @@ jobs:
         if: ${{ github.actor == 'Iacre' || github.actor == 'EdgeReachTech' }}
         uses: actions/checkout@v3
 
-      
-      # Copy the built files to the VPS (you only need to copy the build files)
+      - name: Build frontend
+        run: |
+          cd frontend
+          npm install
+          npm run build  # Generates build/ folder inside frontend
+
+      # Copy only the build files to the VPS (ensure it's only the contents of the build folder)
       - name: Copy build files to VPS
         if: ${{ github.actor == 'Iacre' || github.actor == 'EdgeReachTech' }}
         uses: appleboy/scp-action@v0.1.5
@@ -27,7 +32,7 @@ jobs:
           host: 77.37.124.116
           username: fiacre
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "./"  # Adjust this to the build output folder
+          source: "./frontend/build/*"  # Only copy the contents of the build folder
           target: "/var/www/my-portfolio/frontend"  # Target folder on the server
           port: 2200
 
