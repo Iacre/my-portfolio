@@ -41,7 +41,7 @@ jobs:
           script: |
             # Navigate to the project directory on the server
             cd /var/www/my-portfolio/frontend
-            git pull origin develop  # Pull the latest code (optional, depending on your needs)
+            git pull origin main  # Pull the latest code (optional, depending on your needs)
             npm install  # Install dependencies
             npm run build
           port: 2200
