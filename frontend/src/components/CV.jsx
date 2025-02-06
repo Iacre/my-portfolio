@@ -305,7 +305,7 @@ const CV = () => {
                   setSkills(updatedSkills);
                 }}
                 className="w-full p-2 border rounded-lg mb-2"
-                placeholder="write your skills here"
+                placeholder="write your skills here!"
               />
             ))}
           </div>
