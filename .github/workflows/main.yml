@@ -59,7 +59,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             # If using Nginx
-            sudo systemctl restart nginx
+            #sudo systemctl restart nginx
             
             # Or if using PM2
             # pm2 restart your-app-name
