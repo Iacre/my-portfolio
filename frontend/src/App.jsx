@@ -13,7 +13,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/footer";
 import TestimonialCarousel from "./components/TestimonialCarousel";
 import CV from "./components/CV";
-
+   
 
 
 
@@ -66,7 +66,7 @@ function App() {
     <div className="App bg-mypri min-h-screen w-full relative">
       {/* Background Image */}
       <div 
-  className="absolute inset-0 bg-[url('./assets/bgt.jpg')] bg-repeat bg-auto bg-center opacity-[0.8%]"
+  className="absolute inset-0 bg-[url('/public/assets/bgt.jpg')] bg-repeat bg-auto bg-center opacity-[1.8%]"
   aria-hidden="true"
 ></div>
 

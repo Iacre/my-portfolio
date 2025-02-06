@@ -11,14 +11,14 @@ const PortfolioSection = () => {
     },
     {
       id: 2,
-      title: "Mobile App/Web App",
+      title: "Web App",
       description: "Use cutting-edge frameworks to build responsive and feature-rich apps.",
       image: "./assets/p2.png",
     },
     {
       id: 3,
-      title: "AI Bot",
-      description: "Let bots solve real-time problems by automating repetitive tasks.",
+      title: "AI model",
+      description: "AI Model that do facial recognition and rate the beauty between two images .",
       image: "./assets/p1.png",
     },
   ];

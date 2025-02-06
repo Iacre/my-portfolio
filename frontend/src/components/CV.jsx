@@ -122,7 +122,7 @@ const CV = () => {
 
   return (
     <div className={styles.cvContainer}>
-      <div className="min-h-screen bg-mypri p-8 bg-[url('./assets/cvb.jpg')] bg-repeat bg-auto bg-center bg-opacity-10">
+      <div className="min-h-screen bg-mypri p-8 bg-[url('/public/assets/cvb.jpg')] bg-repeat bg-auto bg-center bg-opacity-10">
         
         {/* Form Section */}
         <div className="mb-8 max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">

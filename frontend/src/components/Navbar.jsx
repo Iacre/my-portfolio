@@ -69,13 +69,14 @@ const Navbar = () => {
                 key={index}
                 className="text-base hover:text-yellow-400"
                 onClick={toggleMenu}
-              >
-                {item}
+
+              ><a className="text-inherit" href={`#${item.toLowerCase()}`}>
+                {item} </a>
               </li>
             ))}
             <li onClick={toggleMenu}>
-            <a href="#contact"> <button className="px-4 py-0 bg-gra2 text-white rounded-full hover:bg-mysec transition">
-                Contact
+            <a href="#cv"> <button className="px-4 py-0 bg-gra2 text-white rounded-full hover:bg-mysec transition">
+                Create Your CV
               </button> </a>
             </li>
           </ul>
