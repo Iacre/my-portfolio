@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { MdMenu } from "react-icons/md";
+import { Link } from "react-router-dom"; // Import Link for navigation
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false); // State to toggle menu
@@ -27,7 +28,12 @@ const Navbar = () => {
           <h1 className="text-xl">
             <span className="text-myhigh">FIACRE</span>
           </h1>
-          <p className="text-sm"><span className="text-myhigh">F</span>luent  <span className="text-myhigh"> I</span>T<span className="text-myhigh"> A</span>nd <span className="text-myhigh">CRE</span> ativity</p>
+          <p className="text-sm">
+            <span className="text-myhigh">F</span>luent{" "}
+            <span className="text-myhigh">I</span>T{" "}
+            <span className="text-myhigh">A</span>nd{" "}
+            <span className="text-myhigh">CRE</span>ativity
+          </p>
         </div>
 
         {/* Hamburger Icon for Mobile */}
@@ -42,16 +48,20 @@ const Navbar = () => {
           <li
             key={index}
             className="group relative cursor-pointer text-base hover:text-yellow-400"
-          > <a className="text-inherit" href={`#${item.toLowerCase()}`}>
-            {item}</a>
+          >
+            <Link to={`/#${item.toLowerCase()}`} className="text-inherit">
+              {item}
+            </Link>
             {/* Hover underline */}
             <span className="absolute left-0 bottom-0 w-0 h-1 bg-yellow-400 group-hover:w-full transition-all duration-300"></span>
           </li>
         ))}
         <li className="group relative cursor-pointer text-base hover:text-mysec mb-2">
-        <a href="#cv"><button className="px-4 py-2 bg-gra1 text-black rounded-full hover:bg-gra2 transition">
-            Create CV
-          </button> </a>
+          <Link to="/cvtemplate">
+            <button className="px-4 py-2 bg-gra1 text-black rounded-full hover:bg-gra2 transition">
+              Create CV
+            </button>
+          </Link>
         </li>
       </ul>
 
@@ -69,15 +79,18 @@ const Navbar = () => {
                 key={index}
                 className="text-base hover:text-yellow-400"
                 onClick={toggleMenu}
-
-              ><a className="text-inherit" href={`#${item.toLowerCase()}`}>
-                {item} </a>
+              >
+                <Link to={`/#${item.toLowerCase()}`} className="text-inherit">
+                  {item}
+                </Link>
               </li>
             ))}
             <li onClick={toggleMenu}>
-            <a href="#cv"> <button className="px-4 py-0 bg-gra2 text-white rounded-full hover:bg-mysec transition">
-                Create Your CV
-              </button> </a>
+              <Link to="/cvtemplate">
+                <button className="px-4 py-0 bg-gra2 text-white rounded-full hover:bg-mysec transition">
+                  Create Your CV
+                </button>
+              </Link>
             </li>
           </ul>
         </motion.div>

@@ -1,98 +1,37 @@
 import { useState } from "react";
-import styles from './CV.module.css';
+import styles from '../components/CV.module.css';
 
-const CV = () => {
-  // State for all sections
+const CvTemplate = () => {
+  // State for all sections initialized with empty or placeholder values
   const [contact, setContact] = useState({
-    firstName: "Fiacre",
-    lastName: "Pec",
-    birthDate: "1999-01-01",
-    phone1: "+250-788-674-885",
-    phone2: "+250-733-770-003",
-    email: "fiacrepec@gmail.com",
-    location: "Kigali, Rwanda",
+    firstName: "",
+    lastName: "",
+    birthDate: "",
+    phone1: "",
+    phone2: "",
+    email: "",
+    location: ""
   });
 
   const [education, setEducation] = useState([
-    {
-      institution: "UNIVERSITY OF RWANDA",
-      degree: "Bachelor Degree in Business and Information Technology",
-      duration: "2021 - 2024",
-    },
-    {
-      institution: "COLLEGE GEORGE FOX",
-      degree: "HIGH SCHOOL DIPLOMA",
-      duration: "2017 - 2020",
-    },
+    { institution: "", degree: "", duration: "" },
+    { institution: "", degree: "", duration: "" }
   ]);
 
-  const [skills, setSkills] = useState([
-    "Front-end Development: React, Redux, HTML, CSS, JavaScript (ES6+)",
-    "Back-end Development: Node.js, Express.js, RESTful API, GraphQL",
-    "Database Management: MongoDB, Mongoose, Firebase",
-    "Version Control: Git, GitHub, GitLab",
-    "Tools & Workflows: Agile Methodologies, CI/CD, Docker, Jest, Postman",
-    "Responsive & Accessible Design/FIGMA",
-    "Leadership Skills and Graphic Designing Skills",
-  ]);
+  const [skills, setSkills] = useState(["", "", ""]);
 
-  const [languages, setLanguages] = useState([
-    "English (Fluent)",
-    "Kimyarwanda (Fluent)",
-    "Kiswahili (Fluent)",
-    "French (Basic)",
-  ]);
+  const [languages, setLanguages] = useState(["", "", ""]);
 
-  const [objective, setObjective] = useState(
-    "A skilled MERN (MongoDB, Express.js, React, Node.js) stack developer with a strong foundation in building scalable and efficient web applications. Experienced in developing responsive, user-centric interfaces with React, backed by RESTful and GraphQL APIs built on Express and Node.js. Proficient in using MongoDB for handling dynamic, flexible data structures and ensuring high performance in data operations."
-  );
+  const [objective, setObjective] = useState("");
 
   const [workExperience, setWorkExperience] = useState([
-    {
-      company: "CyberPro Group – Canada",
-      role: "IT Manager (Remote & onsite (Rwanda Branch)",
-      duration: "2023 - 2025",
-      responsibilities: [
-        "Develop and implement IT strategies that align with business objectives, enhancing efficiency and digital transformation.",
-        "Oversee and execute upgrades and maintenance for company websites, improving functionality, security, and user engagement.",
-        "Manage and maintain website administrative pages, ensuring secure access and up-to-date content.",
-      ],
-    },
-    {
-      company: "EdgeReach Tech, Rwanda",
-      role: "Founder/CEO",
-      duration: "2023 - 2024",
-      responsibilities: [
-        "Successfully managed numerous software development projects, consistently delivering high-quality results that exceed expectations and meet tight deadlines.",
-        "Designed multiple projects using Figma, creating user-centric, visually compelling interfaces that enhance user experience.",
-        "Led efforts in hosting and optimizing projects for search engines (SEO), ensuring robust online presence and discoverability.",
-      ],
-    },
-    {
-      company: "SCHNEL MEDIA, Germany , Rwanda Branch",
-      role: "Graphic Designer & ICT officer",
-      duration: "2020 - 2022",
-      responsibilities: [
-        "Oversee editing and quality control of digital images for brand consistency and appeal.",
-        "Maintain, upgrade, and automate software systems, with expertise in PowerShell scripting for streamlined operations.",
-        "Lead and train teams on project portfolio management (PPM) principles, fostering a culture of continuous improvement and skill enhancement.",
-      ],
-    },
+    { company: "", role: "", duration: "", responsibilities: [""] },
+    { company: "", role: "", duration: "", responsibilities: [""] }
   ]);
 
   const [references, setReferences] = useState([
-    {
-      name: "LUKUNDO JOHN",
-      role: "SHARPEN JOBS/HR",
-      phone: "+250-787-647-429",
-      email: "lukundojohn@gmail.com",
-    },
-    {
-      name: "FELIX NAVAGA",
-      role: "CYBERPRO GROUP/CEO",
-      phone: "+1 (514) 452-4048",
-      email: "felix.navaga@cyberprogroup.com",
-    },
+    { name: "", role: "", phone: "", email: "" },
+    { name: "", role: "", phone: "", email: "" }
   ]);
 
   // Function to handle CV download
@@ -123,10 +62,9 @@ const CV = () => {
   return (
     <div className={styles.cvContainer}>
       <div className="min-h-screen bg-mypri p-8 bg-[url('/public/assets/cvb.jpg')] bg-repeat bg-auto bg-center bg-opacity-10">
-        
         {/* Form Section */}
         <div className="mb-8 max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-          <h2 className={styles.h2} >Personalize Your CV </h2>
+          <h2 className={styles.h2}>Personalize Your CV</h2>
 
           {/* Contact Form */}
           <div className="mb-6">
@@ -252,7 +190,7 @@ const CV = () => {
                     setWorkExperience(updatedExperience);
                   }}
                   className="w-full p-2 border rounded-lg mb-2"
-                  placeholder="Company/Organization use this format (Company Name, Country) "
+                  placeholder="Company/Organization use this format (Company Name, Country)"
                 />
                 <input
                   type="text"
@@ -263,7 +201,7 @@ const CV = () => {
                     setWorkExperience(updatedExperience);
                   }}
                   className="w-full p-2 border rounded-lg mb-2"
-                  placeholder="Role/Position "
+                  placeholder="Role/Position"
                 />
                 <input
                   type="text"
@@ -390,13 +328,11 @@ const CV = () => {
             {/* Contact Section */}
             <div className="mb-8">
               <h2 className={styles.h2}>CONTACT INFORMATION</h2>
-              <p className={styles.p}> <strong>Names:</strong> {contact.firstName} {contact.lastName}
-              </p>
-              <p className={styles.p}> <strong>Birth Date:</strong> {contact.birthDate}</p>
-              <p className={styles.p}><strong>Tel:</strong> {contact.phone1} | {contact.phone2}
-              </p>
+              <p className={styles.p}><strong>Names:</strong> {contact.firstName} {contact.lastName}</p>
+              <p className={styles.p}><strong>Birth Date:</strong> {contact.birthDate}</p>
+              <p className={styles.p}><strong>Tel:</strong> {contact.phone1} | {contact.phone2}</p>
               <p className={styles.p}><strong>Email:</strong> {contact.email}</p>
-              <p className={styles.p}> <strong>Location:</strong> {contact.location}</p>
+              <p className={styles.p}><strong>Location:</strong> {contact.location}</p>
             </div>
 
             {/* Objective Section */}
@@ -426,9 +362,7 @@ const CV = () => {
                   <h4 className={styles.h4}>{exp.role} | {exp.duration}</h4>
                   <ul className={styles.ul}>
                     {exp.responsibilities.map((responsibility, i) => (
-                      <li key={i} className={styles.listDisc}>
-                        {responsibility}
-                      </li>
+                      <li key={i} className={styles.listDisc}>{responsibility}</li>
                     ))}
                   </ul>
                 </div>
@@ -440,9 +374,7 @@ const CV = () => {
               <h2 className={styles.h2}>SKILLS</h2>
               <ul className={styles.ul}>
                 {skills.map((skill, index) => (
-                  <li key={index} className={styles.listDisc}>
-                    {skill}
-                  </li>
+                  <li key={index} className={styles.listDisc}>{skill}</li>
                 ))}
               </ul>
             </div>
@@ -452,9 +384,7 @@ const CV = () => {
               <h2 className={styles.h2}>LANGUAGES</h2>
               <ul className={styles.ul}>
                 {languages.map((language, index) => (
-                  <li key={index} className={styles.listDisc}>
-                    {language}
-                  </li>
+                  <li key={index} className={styles.listDisc}>{language}</li>
                 ))}
               </ul>
             </div>
@@ -478,7 +408,7 @@ const CV = () => {
         <div className="mt-8 text-center">
           <button
             onClick={handleDownload}
-            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300"
+            className="bg-gra1 text-white rounded-full hover:bg-gra2 transition text-white px-6 py-2 rounded-lg shadow-lg"
           >
             Download CV
           </button>
@@ -488,4 +418,4 @@ const CV = () => {
   );
 };
 
-export default CV;
+export default CvTemplate;
