@@ -3,6 +3,10 @@ import Footer from "./components/footer";
 import Home from "./pages/home"; // New Home component
 import CvTemplate from "./pages/CvTemplate"; // Your CV template page
 import { Routes, Route } from 'react-router-dom';
+import AdminLogin from "./pages/AdminLogin";
+import AdminSignup from "./pages/AdminSignup";
+import AdminDashboard from "./pages/AdminDashboard";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -24,6 +28,17 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cvtemplate" element={<CvTemplate />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin/signup" element={<AdminSignup />} />
+          <Route path="/admin/signup" element={<AdminSignup />} />
+          <Route
+            path="/admin/dashboard"
+            element={
+              <PrivateRoute>
+                <AdminDashboard />
+              </PrivateRoute>
+            }
+          />
         </Routes>
 
         {/* Shared Footer */}

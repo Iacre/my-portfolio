@@ -1,16 +1,16 @@
-import PropTypes from "prop-types";
-import { motion } from "framer-motion";
+import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
 
-const PortfolioCard = ({ title, description, image }) => {
+const PortfolioCard = ({ title, description, image,link }) => {
   return (
     <motion.div
-      className="relative max-w-sm shadow-lg overflow-visible bg-mysec rounded-lg mb-16 sm:mb-12" // Added bottom padding
+      className="relative max-w-sm bg-mysec rounded-lg shadow-lg overflow-hidden"
       whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.3 }}
     >
       {/* Image Section */}
       <motion.div
-        className="relative overflow-hidden" // Added overflow-hidden
+        className="relative overflow-hidden"
         whileHover={{ scale: 1.1 }}
         transition={{ duration: 0.3 }}
       >
@@ -21,15 +21,15 @@ const PortfolioCard = ({ title, description, image }) => {
         />
       </motion.div>
 
-      {/* Text Section - Changed positioning */}
+      {/* Text Section */}
       <motion.div
-        className="relative mx-4 -mt-8 p-4 rounded-lg shadow-lg" // Changed to relative positioning
-        animate={{ background: "linear-gradient(135deg, #05788D, #012127)" }}
-        whileHover={{ background: "linear-gradient(135deg, #FAC17F, #BD6D29)" }}
+        className="p-4 bg-gradient-to-r from-[#05788D] to-[#012127] text-white rounded-b-lg"
+        whileHover={{ background: 'linear-gradient(135deg, #FAC17F, #BD6D29)' }}
         transition={{ duration: 0.3 }}
       >
-        <h3 className="text-lg font-bold text-white-800">{title}</h3>
-        <p className="text-sm text-gray-900 mt-2">{description}</p>
+        <h3 className="text-lg font-bold">{title}</h3>
+        <p className="text-sm mt-2 text-gray-200">{description}</p> {/* Improved contrast */}
+        <a className="text-sm mt-2 " href={link}>Visit it </a> {/* Improved contrast */}
       </motion.div>
     </motion.div>
   );
@@ -39,6 +39,7 @@ PortfolioCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
 };
 
 export default PortfolioCard;

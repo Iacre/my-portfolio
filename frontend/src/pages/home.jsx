@@ -5,12 +5,12 @@ import AboutSection from "../components/AboutSection";
 import SecHeading from "../components/SecHeading";
 import SkillCard from "../components/SkillCard";
 import Showcase from "../components/Showcase";
-import Blog from "../components/Blog";
 import MusicPlayer from "../components/MusicPlayer";
 import AnimatedButton from "../components/AnimatedButton";
 import Subscription from "../components/Subscription";
 import Contact from "../components/Contact";
 import TestimonialCarousel from "../components/TestimonialCarousel";
+import BlogSection from '../components/BlogSection';
 
 const tracks = [
   { title: "Track 1", url: "./assets/musics/akon_smack_that_.mp3" },
@@ -144,34 +144,7 @@ In the ever-evolving world of technology and design, I am here to be the solutio
 
       {/* Blog Section */}
       <div id="blog" className="px-2 md:px-8 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <Blog
-            image="./assets/b3.png"
-            date="May 25, 2021"
-            heading="The Future of AI and Machine Learning"
-            paragraph="Discover the latest trends in AI and machine learning and how they are shaping the future."
-            link="https://google.com"
-          />
-          <Blog
-            image="./assets/b1.png"
-            date="June 15, 2021"
-            heading="The Impact of Cybersecurity"
-            paragraph="Learn how cybersecurity is essential for businesses and how it can protect your data and assets."
-            link="https://google.com"
-          />
-          <Blog
-            image="./assets/b2.png"
-            date="July 5, 2021"
-            heading="The Art of Creative Design"
-            paragraph="Explore the world of creative design and how it can transform your business and brand."
-            link="https://google.com"
-          />
-        </div>
-        <div className="py-8 text-center">
-          <button className="px-6 py-3 bg-transparent border border-blue-500 text-white rounded-full hover:bg-gra1 transition">
-            Explore More
-          </button>
-        </div>
+        <BlogSection />
       </div>
 
       {/* Resume Title */}

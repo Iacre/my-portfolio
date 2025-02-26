@@ -1,64 +1,47 @@
-
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 
 const Blog = ({ image, date, heading, paragraph, link }) => {
   return (
-    <div className="blog  p-6 rounded-lg shadow-lg space-y-4">
+    <motion.div
+      className="bg-white rounded-lg shadow-lg overflow-hidden"
+      whileHover={{ scale: 1.05 }}
+      transition={{ duration: 0.3 }}
+    >
       {/* Image Section */}
-      <motion.div
-        className="rounded-lg overflow-hidden"
-        whileHover={{ scale: 1.05 }}
-        transition={{ duration: 0.3 }}
-      >
-        <img src={image} alt={heading} className="w-full h-auto object-cover" />
-      </motion.div>
+      <div className="overflow-hidden">
+        <motion.img
+          src={image}
+          alt={heading}
+          className="w-full h-48 object-cover"
+          whileHover={{ scale: 1.1 }}
+          transition={{ duration: 0.3 }}
+        />
+      </div>
 
-      {/* Date Section */}
-      <motion.div
-        className="bg-white p-2 rounded-full text-center"
-        whileHover={{ scale: 1.05 }}
-        transition={{ duration: 0.3 }}
-      >
-        <p className="text-gray-600">{date}</p>
-      </motion.div>
+      {/* Content Section */}
+      <div className="p-6 space-y-4">
+        {/* Date */}
+        <p className="text-gray-500 text-sm">{date}</p>
 
-      {/* Heading Section */}
-      <motion.div
-        className="bg-white p-4 rounded-mbr"
-        whileHover={{ scale: 1.05 }}
-        transition={{ duration: 0.3 }}
-      >
+        {/* Heading */}
         <h2 className="text-xl font-bold text-gray-800">{heading}</h2>
-      </motion.div>
 
-      {/* Paragraph Section */}
-      <motion.div
-        className="bg-white p-4 rounded-mbr"
-        whileHover={{ scale: 1.05 }}
-        transition={{ duration: 0.3 }}
-      >
+        {/* Paragraph */}
         <p className="text-gray-600">{paragraph}</p>
-      </motion.div>
 
-      {/* Button Section */}
-      <motion.div
-        className="text-center"
-        whileHover={{ scale: 1.05 }}
-        transition={{ duration: 0.3 }}
-      >
+        {/* Button */}
         <a
           href={link}
-          className="block w-full px-6 py-3 bg-gra2 text-white rounded-full hover:bg-gra1 transition"
+          className="block w-full text-center px-6 py-2 bg-gra2 text-white rounded-full hover:bg-gra1 transition"
         >
           Visit Full Page
         </a>
-      </motion.div>
-    </div>
+      </div>
+    </motion.div>
   );
 };
 
-// Define PropTypes
 Blog.propTypes = {
   image: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,

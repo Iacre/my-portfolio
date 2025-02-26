@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaStar } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const Testimonial = ({ image, name, position, testimonial }) => {
   return (
@@ -41,16 +42,62 @@ Testimonial.propTypes = {
   testimonial: PropTypes.string.isRequired,
 };
 
-const TestimonialCarousel = ({ testimonials }) => {
+const TestimonialCarousel = () => { // Removed testimonials prop
   const [index, setIndex] = useState(0);
+  const [testimonials, setTestimonials] = useState([]); // State to hold fetched data
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-    }, 10000); // Change testimonial every 5 seconds
+    const fetchTestimonials = async () => {
+      try {
+        const response = await axios.get(`${API_URL}/testimonials`, { withCredentials: true });
+        setTestimonials(response.data);
+        setLoading(false);
+      } catch (err) {
+        setError(err.response?.data?.message || 'Failed to fetch testimonials');
+        setLoading(false);
+      }
+    };
 
-    return () => clearInterval(interval);
+    fetchTestimonials();
+  }, []);
+
+  useEffect(() => {
+    if (testimonials.length > 0) {
+      const interval = setInterval(() => {
+        setIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+      }, 10000); // Change testimonial every 10 seconds
+
+      return () => clearInterval(interval);
+    }
   }, [testimonials.length]);
+
+  if (loading) {
+    return (
+      <div className="relative w-full h-96 flex justify-center items-center overflow-hidden">
+        <p className="text-gray-400">Loading testimonials...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="relative w-full h-96 flex justify-center items-center overflow-hidden">
+        <p className="text-red-500">{error}</p>
+      </div>
+    );
+  }
+
+  if (testimonials.length === 0) {
+    return (
+      <div className="relative w-full h-96 flex justify-center items-center overflow-hidden">
+        <p className="text-gray-400">No testimonials available</p>
+      </div>
+    );
+  }
 
   return (
     <div className="relative w-full h-96 flex justify-center items-center overflow-hidden">
@@ -71,14 +118,7 @@ const TestimonialCarousel = ({ testimonials }) => {
 };
 
 TestimonialCarousel.propTypes = {
-  testimonials: PropTypes.arrayOf(
-    PropTypes.shape({
-      image: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      position: PropTypes.string.isRequired,
-      testimonial: PropTypes.string.isRequired,
-    })
-  ).isRequired,
+  // Removed testimonials propTypes since it's now fetched internally
 };
 
 export default TestimonialCarousel;

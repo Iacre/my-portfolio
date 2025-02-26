@@ -1,34 +1,34 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import PortfolioCard from './PortfolioCard';
+import Blog from './Blog';
 
-const PortfolioSection = () => {
-  const [projects, setProjects] = useState([]);
+const BlogSection = () => {
+  const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
-    const fetchProjects = async () => {
+    const fetchBlogs = async () => {
       try {
-        const response = await axios.get(`${API_URL}/projects`, { withCredentials: true });
-        setProjects(response.data);
+        const response = await axios.get(`${API_URL}/blogs`, { withCredentials: true });
+        setBlogs(response.data);
         setLoading(false);
       } catch (err) {
-        setError(err.response?.data?.message || 'Failed to fetch projects');
+        setError(err.response?.data?.message || 'Failed to fetch blogs');
         setLoading(false);
       }
     };
 
-    fetchProjects();
+    fetchBlogs();
   }, []);
 
   if (loading) {
     return (
       <section className="relative bg-mysec rounded-l-3xl text-white py-16 px-6">
         <div className="max-w-screen-xl mx-auto text-center">
-          <p className="text-gray-400">Loading projects...</p>
+          <p className="text-gray-400">Loading blogs...</p>
         </div>
       </section>
     );
@@ -49,23 +49,24 @@ const PortfolioSection = () => {
       <div className="max-w-screen-xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-10">
-          <h3 className="text-yellow-500 uppercase text-sm pb-4">Portfolio</h3>
+          <h3 className="text-yellow-500 uppercase text-sm pb-4">Blog</h3>
           <h2 className="text-4xl font-bold mt-2">
-            My <span className="text-gradient bg-gradient-to-r from-blue-500 via-purple-500 to-yellow-500">Recent Works</span>
+            Latest <span className="text-gradient bg-gradient-to-r from-blue-500 via-purple-500 to-yellow-500">Posts</span>
           </h2>
           <button className="mt-6 px-6 py-3 bg-transparent border border-blue-500 rounded-full text-white hover:bg-gra2 hover:text-white transition">
-            Explore All Projects
+            Explore All Blogs
           </button>
         </div>
-        {/* Cards Section */}
+        {/* Blogs Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project) => (
-            <PortfolioCard
-              key={project._id} // Use _id from backend
-              title={project.title}
-              description={project.description}
-              image={project.image}
-              link={project.link}
+          {blogs.map((blog) => (
+            <Blog
+              key={blog._id} // Use _id from backend
+              image={blog.image}
+              date={new Date(blog.date).toLocaleDateString()} // Format date
+              heading={blog.title} // Assuming 'title' from backend
+              paragraph={blog.content} // Assuming 'content' from backend
+              link={blog.link}
             />
           ))}
         </div>
@@ -74,4 +75,4 @@ const PortfolioSection = () => {
   );
 };
 
-export default PortfolioSection;
+export default BlogSection;
