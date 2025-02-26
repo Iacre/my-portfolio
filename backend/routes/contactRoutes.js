@@ -1,7 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const { createContact } = require('../controllers/contactController');
+const { createContact, getContacts, updateContact, deleteContact } = require('../controllers/contactController');
+const { auth, adminOnly } = require('../middleware/auth');
 
-router.post('/', createContact);
+router.get('/', auth, adminOnly, getContacts); // Admin only (view messages)
+router.post('/', createContact); // Public (anyone can send a message)
+router.put('/:id', auth, adminOnly, updateContact); // Admin only
+router.delete('/:id', auth, adminOnly, deleteContact); // Admin only
 
 module.exports = router;

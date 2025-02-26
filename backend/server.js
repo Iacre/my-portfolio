@@ -18,10 +18,11 @@ app.use('/api/testimonials', require('./routes/testimonialRoutes'));
 app.use('/api/contact', require('./routes/contactRoutes'));
 app.use('/api/blogs', require('./routes/blogRoutes'));
 app.use('/api/newsletter', require('./routes/newsletterRoutes'));
+app.use('/api/auth', require('./routes/authRoutes')); // Add auth routes
 
 // Test route
 app.get('/', (req, res) => {
-  res.send('Portfolio Backend API');
+  res.send('fiacre Portfolio Backend API');
 });
 
 const PORT = process.env.PORT || 5000;
