@@ -28,11 +28,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cvtemplate" element={<CvTemplate />} />
-          <Route path="/admin/login" element={<AdminLogin />} />
-          <Route path="/admin/signup" element={<AdminSignup />} />
-          <Route path="/admin/signup" element={<AdminSignup />} />
+          <Route path="/login" element={<AdminLogin />} />
+          <Route path="/signup" element={<AdminSignup />} />
           <Route
-            path="/admin/dashboard"
+            path="/dashboard"
             element={
               <PrivateRoute>
                 <AdminDashboard />

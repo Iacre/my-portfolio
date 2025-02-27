@@ -12,13 +12,13 @@ const AdminSignup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5002/api/auth/register', {
+      const res = await axios.post('https://api.fiacre.tech/api/auth/register', {
         email,
         password,
       });
       setSuccess(res.data.message);
       setError('');
-      setTimeout(() => navigate('/admin/login'), 2000); // Redirect after 2s
+      setTimeout(() => navigate('/login'), 2000); // Redirect after 2s
     } catch (err) {
       setError(err.response?.data?.message || 'Signup failed');
       setSuccess('');
@@ -65,7 +65,7 @@ const AdminSignup = () => {
         </form>
         <p className="text-gray-400 text-center mt-4">
           Already have an account?{' '}
-          <a href="/admin/login" className="text-yellow-500 hover:underline">Login</a>
+          <a href="/login" className="text-yellow-500 hover:underline">Login</a>
         </p>
       </div>
     </div>

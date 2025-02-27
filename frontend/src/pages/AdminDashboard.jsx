@@ -21,7 +21,7 @@ const AdminDashboard = () => {
   const [modalLoading, setModalLoading] = useState(false);
   const navigate = useNavigate();
 
-  const API_URL = 'http://localhost:5002/api'; // Adjust if your backend uses a different port
+  const API_URL = 'https://api.fiacre.tech/api'; // Adjust if your backend uses a different port
 
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
   const editForm = useForm();
@@ -51,7 +51,7 @@ const AdminDashboard = () => {
       console.error('Fetch Error:', err.message);
       setError(err.message || 'Failed to fetch data');
       if (err.response?.status === 401 || err.response?.status === 403) {
-        navigate('/admin/login'); // Redirect to login if unauthorized
+        navigate('/signup'); // Redirect to login if unauthorized
       }
     } finally {
       setLoading(false);
@@ -61,7 +61,7 @@ const AdminDashboard = () => {
   const handleLogout = async () => {
     try {
       await axios.post(`${API_URL}/auth/logout`, {}, { withCredentials: true });
-      navigate('/admin/login');
+      navigate('/login');
       toast.success('Logged out successfully!');
     } catch (err) {
       setError(err.response?.data?.message || 'Failed to logout');

@@ -11,9 +11,9 @@ const AdminLogin = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5002/api/auth/login', { email, password }, { withCredentials: true });
+      await axios.post('https://api.fiacre.tech/api/auth/login', { email, password }, { withCredentials: true });
       setError('');
-      navigate('/admin/dashboard');
+      navigate('/dashboard');
     } catch (err) {
       setError(err.response?.data?.message || 'Login failed');
     }
@@ -58,7 +58,7 @@ const AdminLogin = () => {
         </form>
         <p className="text-gray-400 text-center mt-4">
           Need an account?{' '}
-          <a href="/admin/signup" className="text-yellow-500 hover:underline">Sign Up</a>
+          <a href="/signup" className="text-yellow-500 hover:underline">Sign Up</a>
         </p>
       </div>
     </div>
